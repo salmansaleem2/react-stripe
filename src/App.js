@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { loadStripe } from "@stripe/stripe-js";
+import "./App.css";
+import Cardcomponent from "./components/Cardcomponent";
 
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 function App() {
+  console.log(stripePromise);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Cardcomponent />
     </div>
   );
 }
